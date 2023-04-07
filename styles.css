@@ -3,22 +3,26 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 40vh;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+  margin-right: none;
 }
 
 .header-bar {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 1.5rem 5%;
   background-color: #ffce33;
 }
 
 .header-bar__column {
-  width: 33%;
-}
-
-.header-bar__column:first-child {
-  left: -10px;
+  width: 100vw;
 }
 
 .header-bar__column:nth-child(2) {
@@ -34,6 +38,7 @@ body {
 .search-bar__form {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   outline: none;
 }
@@ -43,7 +48,7 @@ body {
   width: 90%;
   height: 50px;
   border-radius: 30px;
-  top: -20px;
+  margin-top: 2.5rem;
   padding: 25px;
   outline: none;
   border: none;
@@ -52,32 +57,34 @@ body {
 
 .search-bar__form i {
   position: absolute;
-  right: 65px;
-  top: -4px;
+  right: 9%;
+  top: 0.7rem;
 }
 
 .title {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 2rem;
   margin-top: 80px;
   margin-left: 40px;
 }
 
 .book-info {
+  width: 35%;
   margin-left: 40px;
   margin-top: 40px;
   display: flex;
 }
 
 .book-info__column {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 35px;
+  margin-left: 1rem;
 }
 
-.book-info__column span:first-child {
+.hwasan {
   font-weight: 900;
-  font-size: 40px;
+  font-size: 1rem;
   margin-bottom: 20px;
 }
 
@@ -87,63 +94,93 @@ body {
 }
 
 .star {
-  display: flex;
   color: #ffce33;
 }
 
 .genre {
+  width: 100%;
   margin-top: 20px;
-
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 10%;
 }
-
+@media (max-width: 450px) {
+  .genre {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .genre div {
   background-color: #e3ddd1;
-  padding: 10px;
+  padding: 0.5rem 1rem;
   text-align: center;
 }
 
 .book {
+  width: 100%;
   margin-top: 20px;
   display: flex;
   align-items: center;
 }
 
 .bookmark {
-  margin-right: 100px;
+  margin-right: 5%;
   padding: 15px;
-
   background-color: #ffce33;
   border-radius: 60px;
 }
 
 .book__btn {
-  padding: 15px;
+  padding: 0.5rem 2vw;
   background-color: black;
   color: white;
   border-radius: 10px;
-  width: 150px;
   text-align: center;
-}
-
-.book-list__column img {
-  width: 140px;
-  height: 200px;
-  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .book-list {
-  margin-top: 30px;
-  margin-left: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  margin-left: 2.5%;
+}
+
+.book-list__column img {
+  width: 7rem;
+  height: 10rem;
+  box-sizing: border-box;
+}
+
+.stars {
+  margin-right: 20%;
+}
+
+.book-list__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 580px) {
+  .book-list {
+    height: 55vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stars {
+    margin-right: 11%;
+  }
 }
 
 .book-list-title {
   margin-top: 30px;
   margin-left: 40px;
+  margin-bottom: 1rem;
   font-weight: 800;
   font-size: 35px;
 }
@@ -155,15 +192,6 @@ body {
   margin-left: 25px;
 }
 
-.book-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.book-list__column:last-child {
-  margin-right: 40px;
-}
-
 .author {
   margin-top: 30px;
   margin-left: 40px;
@@ -172,14 +200,15 @@ body {
 }
 
 .character img {
-  width: 150px;
-  height: 200px;
+  width: 10rem;
+  height: 15rem;
 }
 
 .character {
   margin-left: 40px;
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
+  height: 100%;
 }
 
 .character-info {
@@ -192,7 +221,9 @@ body {
 }
 
 .character-info p {
+  width: 90%;
   margin-top: 10px;
   opacity: 0.4;
   margin-left: 3px;
+  font-size: 0.8rem;
 }
